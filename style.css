@@ -1,0 +1,440 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   FOREST BACKGROUND
+======================================== */
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: #edf1df;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 35%,
+            rgba(117, 157, 91, 0.3),
+            transparent 45%
+        ),
+        linear-gradient(
+            to bottom,
+            #294b34 0%,
+            #183824 40%,
+            #102719 72%,
+            #07160f 100%
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 16px;
+    overflow-x: hidden;
+    position: relative;
+    isolation: isolate;
+}
+
+/* Distant leafy forest canopy */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse at 0% 5%, #142d1d 0 18%, transparent 18.5%),
+        radial-gradient(ellipse at 12% 0%, #1c3b26 0 16%, transparent 16.5%),
+        radial-gradient(ellipse at 28% 8%, #183723 0 17%, transparent 17.5%),
+        radial-gradient(ellipse at 48% 0%, #24482d 0 15%, transparent 15.5%),
+        radial-gradient(ellipse at 67% 4%, #193824 0 19%, transparent 19.5%),
+        radial-gradient(ellipse at 87% 0%, #24452c 0 17%, transparent 17.5%),
+        radial-gradient(ellipse at 100% 12%, #122b1b 0 20%, transparent 20.5%),
+        radial-gradient(ellipse at 4% 43%, #355c3b 0 8%, transparent 8.5%),
+        radial-gradient(ellipse at 22% 49%, #294d32 0 10%, transparent 10.5%),
+        radial-gradient(ellipse at 79% 45%, #294d32 0 11%, transparent 11.5%),
+        radial-gradient(ellipse at 100% 42%, #355c3b 0 9%, transparent 9.5%),
+        linear-gradient(
+            to top,
+            #07160f 0%,
+            #10281a 12%,
+            transparent 48%
+        );
+
+    opacity: 0.95;
+}
+
+/* Tree trunks, pine silhouettes and forest shadows */
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        /* Pine silhouettes on the left */
+        conic-gradient(
+            from 150deg at 5% 24%,
+            transparent 0deg,
+            #06150d 0deg 60deg,
+            transparent 60deg
+        ),
+        conic-gradient(
+            from 150deg at 13% 35%,
+            transparent 0deg,
+            #0a1c11 0deg 60deg,
+            transparent 60deg
+        ),
+        conic-gradient(
+            from 150deg at 24% 29%,
+            transparent 0deg,
+            #0a1c11 0deg 60deg,
+            transparent 60deg
+        ),
+
+        /* Pine silhouettes on the right */
+        conic-gradient(
+            from 150deg at 95% 25%,
+            transparent 0deg,
+            #06150d 0deg 60deg,
+            transparent 60deg
+        ),
+        conic-gradient(
+            from 150deg at 86% 34%,
+            transparent 0deg,
+            #0a1c11 0deg 60deg,
+            transparent 60deg
+        ),
+        conic-gradient(
+            from 150deg at 76% 27%,
+            transparent 0deg,
+            #0a1c11 0deg 60deg,
+            transparent 60deg
+        ),
+
+        /* Dark tree trunks framing the scene */
+        linear-gradient(
+            to right,
+            #06150d 0 2%,
+            transparent 2% 9%,
+            #091b10 9% 10%,
+            transparent 10% 18%,
+            #0b1e12 18% 19%,
+            transparent 19% 80%,
+            #0b1e12 80% 81%,
+            transparent 81% 89%,
+            #091b10 89% 90%,
+            transparent 90% 97%,
+            #06150d 97% 100%
+        ),
+
+        /* Uneven forest floor */
+        radial-gradient(
+            ellipse at 50% 110%,
+            #06140c 0 42%,
+            transparent 72%
+        );
+
+    opacity: 0.82;
+}
+
+/* ========================================
+   BIRTHDAY CARD
+======================================== */
+
+.birthday-card {
+    width: 100%;
+    max-width: 650px;
+    padding: 50px 35px;
+
+    background: rgba(245, 242, 222, 0.97);
+    border: 1px solid rgba(220, 197, 130, 0.65);
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, 0.35),
+        0 0 35px rgba(139, 177, 109, 0.1);
+
+    text-align: center;
+    position: relative;
+    z-index: 2;
+
+    animation: fadeIn 1.2s ease both;
+}
+
+/* Small heading */
+
+.small-heading {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #728660;
+    margin-bottom: 22px;
+}
+
+/* Birthday title */
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 8vw, 64px);
+    line-height: 1.15;
+    color: #244c32;
+    margin-bottom: 18px;
+}
+
+/* Subtitle */
+
+.subtitle {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #68775c;
+}
+
+/* Birthday emojis */
+
+.birthday-decoration {
+    font-size: 42px;
+    margin: 30px 0;
+    animation: bob 3s ease-in-out infinite;
+}
+
+/* ========================================
+   MESSAGE SECTION
+======================================== */
+
+.message {
+    background: #e8ebd9;
+    border: 1px solid #d4d9bd;
+    padding: 28px 24px;
+    border-radius: 18px;
+    margin-top: 20px;
+}
+
+.message h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: #345c3b;
+    margin-bottom: 15px;
+}
+
+.message > p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #52664c;
+}
+
+/* ========================================
+   REVEAL BUTTON
+======================================== */
+
+.reveal-button {
+    margin-top: 24px;
+    padding: 16px 28px;
+
+    border: 1px solid #c9b575;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #244c32,
+        #3e6845
+    );
+
+    color: #f5f2de;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 20px rgba(36, 76, 50, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.reveal-button:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow: 0 10px 28px rgba(36, 76, 50, 0.3);
+
+    background: linear-gradient(
+        135deg,
+        #345e3d,
+        #507b53
+    );
+}
+
+.reveal-button:active {
+    transform: scale(0.97);
+}
+
+.reveal-button:disabled {
+    cursor: default;
+    opacity: 0.85;
+}
+
+/* ========================================
+   REVEALED BIRTHDAY MESSAGE
+======================================== */
+
+.hidden {
+    display: none !important;
+}
+
+.message-reveal {
+    margin-top: 28px;
+    padding: 24px;
+
+    border-radius: 16px;
+    background: #f7f5e9;
+    border: 1px solid #d8c58a;
+
+    text-align: left;
+}
+
+.message-reveal p {
+    white-space: pre-line;
+    line-height: 1.95;
+    color: #40563b;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.message-reveal.show {
+    display: block !important;
+    animation: messageAppear 1s ease both;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer-message {
+    margin-top: 28px;
+    font-size: 13px;
+    color: #8c7742;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   CONFETTI AND BALLOONS
+======================================== */
+
+.confetti-container,
+.balloons-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti-container {
+    z-index: 5;
+}
+
+.balloons-container {
+    z-index: 1;
+}
+
+.confetti-piece {
+    position: fixed;
+    pointer-events: none;
+}
+
+.balloon {
+    position: fixed;
+    pointer-events: none;
+    user-select: none;
+    will-change: transform, opacity;
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bob {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 480px) {
+    body {
+        padding: 24px 12px;
+    }
+
+    .birthday-card {
+        padding: 38px 22px;
+    }
+
+    .message {
+        padding: 24px 18px;
+    }
+
+    .small-heading {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .message-reveal {
+        padding: 18px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .birthday-card,
+    .birthday-decoration,
+    .message-reveal {
+        animation: none;
+    }
+}
